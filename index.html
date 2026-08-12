@@ -1,0 +1,670 @@
+```html
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfólio | Marta Mario Horta</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* MENU */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #071a3d;
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #00c6ff;
+}
+
+/* INÍCIO */
+#inicio {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #071a3d, #0066cc);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 25px;
+    color: #00d9ff;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* FOTO */
+.foto {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin: 0 auto 25px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    overflow: hidden;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SEÇÕES */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 25px;
+}
+
+section h2 {
+    text-align: center;
+    color: #0066cc;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #00aaff;
+    margin: 10px auto;
+}
+
+/* SOBRE */
+.sobre {
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #0066cc;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+/* HABILIDADES */
+.skills {
+    max-width: 800px;
+    margin: auto;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.bar {
+    background: #ddd;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #0066cc;
+}
+
+/* PROJETOS */
+.project {
+    background: white;
+    padding: 25px;
+    border-left: 5px solid #0066cc;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.project h3 {
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+/* CONTACTO */
+.contactos {
+    text-align: center;
+}
+
+.contacto-item {
+    display: inline-block;
+    margin: 15px;
+    padding: 20px 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.contacto-item strong {
+    color: #0066cc;
+}
+
+/* BOTÕES */
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 25px;
+    background: #00aaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #0088cc;
+}
+
+/* RODAPÉ */
+footer {
+    background: #071a3d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* RESPONSIVO */
+@media(max-width: 700px) {
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<nav>
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#formacao">Formação</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#experiencia">Experiência</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#objetivo">Objetivos</a>
+    <a href="#contactos">Contactos</a>
+</nav>
+
+<!-- INÍCIO -->
+<header id="inicio">
+
+    <div class="hero">
+
+        <!-- ESPAÇO PARA FOTO -->
+             <div class="foto">
+                <img src="Screenshot_20260810-124701~2.jpg" alt="Foto de Marta Mario Horta">
+            </div>
+
+
+            <!--
+            Para colocar a foto:
+            1. Coloque uma imagem chamada "marta.jpg"
+               na mesma pasta deste ficheiro.
+            2. Apague o <span>FOTO</span>.
+            3. Retire os comentários da linha abaixo.
+
+            <img src="marta.jpg" alt="Marta Mario Horta">
+            -->
+        </div>
+
+        <h1>Marta Mario Horta</h1>
+
+        <h2>Suporte Informático | Programação</h2>
+
+        <p>
+            Bem-vindo ao meu portfólio profissional.
+            Este espaço apresenta as minhas competências,
+            conhecimentos, experiência e objetivos na área
+            de Tecnologia da Informação.
+        </p>
+
+        <a href="#contactos" class="btn">Entrar em Contacto</a>
+
+    </div>
+
+</header>
+
+
+<!-- SOBRE -->
+<section id="sobre">
+
+    <h2>Sobre Mim</h2>
+
+    <div class="sobre">
+
+        <p>
+            Sou <strong>Marta Mario Horta</strong>, interessada na área
+            de Tecnologia da Informação, com formação em
+            <strong>Suporte Informático</strong> e experiência ligada
+            à <strong>programação</strong>.
+        </p>
+
+        <p>
+            Tenho interesse em aprender novas tecnologias,
+            desenvolver soluções informáticas e melhorar
+            continuamente as minhas competências técnicas.
+        </p>
+
+        <p>
+            Sou uma pessoa dedicada, responsável e motivada
+            para enfrentar novos desafios no mundo da tecnologia.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FORMAÇÃO -->
+<section id="formacao">
+
+    <h2>Formação Académica</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Suporte Informático</h3>
+
+            <p>
+                Formação direcionada para suporte técnico,
+                manutenção de computadores, sistemas operativos,
+                redes e resolução de problemas informáticos.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Desenvolvimento de Competências</h3>
+
+            <p>
+                Aperfeiçoamento contínuo de conhecimentos em
+                informática, programação e tecnologias digitais.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HABILIDADES -->
+<section id="habilidades">
+
+    <h2>Habilidades de Informática</h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <div class="skill-name">Suporte Informático</div>
+            <div class="bar">
+                <div class="progress" style="width: 90%;"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Programação</div>
+            <div class="bar">
+                <div class="progress" style="width: 80%;"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Microsoft Office</div>
+            <div class="bar">
+                <div class="progress" style="width: 85%;"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Manutenção de Computadores</div>
+            <div class="bar">
+                <div class="progress" style="width: 85%;"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Sistemas Operativos</div>
+            <div class="bar">
+                <div class="progress" style="width: 85%;"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">Redes de Computadores</div>
+            <div class="bar">
+                <div class="progress" style="width: 75%;"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">HTML e Desenvolvimento Web</div>
+            <div class="bar">
+                <div class="progress" style="width: 80%;"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIÊNCIA -->
+<section id="experiencia">
+
+    <h2>Experiência</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Programação</h3>
+
+            <p>
+                Experiência e conhecimentos relacionados com
+                programação e desenvolvimento de soluções
+                informáticas.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Suporte Técnico</h3>
+
+            <p>
+                Conhecimentos na identificação e resolução
+                de problemas relacionados com computadores,
+                software e sistemas informáticos.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COMPETÊNCIAS -->
+<section>
+
+    <h2>Competências Técnicas</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Hardware</h3>
+            <p>
+                Identificação de componentes, manutenção
+                básica e configuração de computadores.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Software</h3>
+            <p>
+                Instalação, configuração e utilização
+                de programas e sistemas operativos.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Redes</h3>
+            <p>
+                Conhecimentos básicos de redes de computadores,
+                ligação de dispositivos e configuração.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Segurança</h3>
+            <p>
+                Conhecimentos básicos de segurança informática,
+                proteção de dados e boas práticas digitais.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJETOS -->
+<section id="projetos">
+
+    <h2>Projetos</h2>
+
+    <div class="project">
+
+        <h3>Projeto de Programação</h3>
+
+        <p>
+            Desenvolvimento de pequenos projetos e aplicações
+            para colocar em prática conhecimentos de programação.
+        </p>
+
+    </div>
+
+    <div class="project">
+
+        <h3>Projeto de Suporte Informático</h3>
+
+        <p>
+            Práticas relacionadas com manutenção, configuração
+            e resolução de problemas em computadores.
+        </p>
+
+    </div>
+
+    <div class="project">
+
+        <h3>Projeto Web</h3>
+
+        <p>
+            Criação de páginas web utilizando HTML e CSS,
+            com foco em organização, apresentação e
+            experiência do utilizador.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- OBJETIVO -->
+<section id="objetivo">
+
+    <h2>Objetivo Profissional</h2>
+
+    <div class="sobre">
+
+        <p>
+            O meu principal objetivo profissional é
+            <strong>tornar-me uma profissional de IT</strong>,
+            desenvolvendo continuamente os meus conhecimentos
+            e competências em Tecnologia da Informação.
+        </p>
+
+        <p>
+            Pretendo adquirir mais experiência, aprender novas
+            tecnologias e contribuir para o desenvolvimento
+            de soluções eficientes na área de informática.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- QUALIDADES -->
+<section>
+
+    <h2>Qualidades Pessoais</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Responsabilidade</h3>
+            <p>Compromisso com as tarefas e objetivos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Dedicação</h3>
+            <p>Vontade de aprender e melhorar continuamente.</p>
+        </div>
+
+        <div class="card">
+            <h3>Trabalho em Equipa</h3>
+            <p>Capacidade de colaborar com outras pessoas.</p>
+        </div>
+
+        <div class="card">
+            <h3>Resolução de Problemas</h3>
+            <p>Interesse em encontrar soluções para desafios técnicos.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACTOS -->
+<section id="contactos">
+
+    <h2>Contactos</h2>
+
+    <div class="contactos">
+
+        <div class="contacto-item">
+            <strong>WhatsApp</strong>
+            <p>873 377 173</p>
+        </div>
+
+        <div class="contacto-item">
+            <strong>Email</strong>
+            <p>martahorta14@gmail.com</p>
+        </div>
+
+        <br>
+
+        <a
+            href="https://wa.me/258873377173"
+            class="btn"
+            target="_blank">
+            Contactar pelo WhatsApp
+        </a>
+
+        <a
+            href="mailto:martahorta14@gmail.com"
+            class="btn">
+            Enviar Email
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- RODAPÉ -->
+<footer>
+
+    <p>
+        © 2026 Marta Mario Horta | Portfólio Profissional
+    </p>
+
+    <p>
+        Suporte Informático • Programação • Tecnologia
+    </p>
+
+</footer>
+
+</body>
+</html>
+```
